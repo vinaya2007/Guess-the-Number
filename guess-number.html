@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="guess-number.css">
+</head>
+
+<body>
+    <div class="instruction">
+        <p>You have ten chances to <span class="s1">Guess the number. </span> <span class="s2">Go Ahead!!</span></p>
+    </div>
+    <div class="content">
+        <h1>Check the Number</h1>
+        <input id="guess" type="number" placeholder="Enter a number between 1-10">
+        <button onclick="check()">Check</button>
+        <p id="result">Result</p>
+        <p id="score">Your score: 10</p>
+    </div>
+
+    <script>
+        var guessnumber = document.getElementById("guess");
+        var result = document.getElementById("result");
+        var randomnum = Math.floor(Math.random() * 10) + 1;
+        var score = 10;
+        var scoreDisplay = document.getElementById("score");
+
+        function check() {
+            var entered = parseInt(guessnumber.value);
+            if (entered === randomnum) {
+                result.textContent = "You are right!";
+                alert("You won!");
+            } else {
+                score -= 1;
+                result.textContent = "You are wrong! Try again.";
+                scoreDisplay.textContent = "Your score: " + score;
+
+                if (score <= 0) {
+                    result.textContent = "Game over! The correct number was " + randomnum;
+                    alert("Game Over");
+                    score = 10;
+                    randomnum = Math.floor(Math.random() * 10) + 1;
+                    scoreDisplay.textContent = "Your score: 10";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
