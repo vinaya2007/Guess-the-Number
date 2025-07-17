@@ -7,7 +7,7 @@ You have 10 chances to guess the correct number between 1 and 10. Will you score
 
 ## 🖼️ Screenshot
 
-![Guess the Number Game UI](number.png)
+![Guess the Number Game UI](./number.png)
 
 ---
 
@@ -38,7 +38,7 @@ You have 10 chances to guess the correct number between 1 and 10. Will you score
 
 
 2. Navigate to the project folder:
-   cd bookPad
+   cd Guess-the-Number
 
 3. Open `index.html` in your browser.
 
